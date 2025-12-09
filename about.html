@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1;
+        }
+
+        .containe {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .hero-image {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            padding: 32px;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .heading {
+           
+            color: #1a1a1a;
+            margin-bottom: 0 rem;
+            font-size: 0.95rem;
+            line-height: 1;
+            font-weight: bold;
+
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #0099ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 1rem 0 2rem;
+        }
+
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0099ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .decoration {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(0, 153, 255, 0.1);
+        }
+
+        .decoration-1 {
+            top: 10%;
+            left: 10%;
+        }
+
+        .decoration-2 {
+            bottom: 20%;
+            right: 15%;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-image {
+                width: 300px;
+                height: 300px;
+            }
+
+            .stats {
+                justify-content: center;
+            }
+        }
+     
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: flex;
+            gap: 4rem;
+            background-color: #f8f9fa;
+        }
+
+        .image-section {
+            flex: 1;
+        }
+
+        .image-section img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+        }
+
+        .content-section {
+            flex: 1;
+            padding-top: 2rem;
+        }
+
+        .heading {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .heading span {
+            color: #0066cc;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1rem 1.5rem;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            background-color: #0099ff;
+            border-radius: 50%;
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+        }
+
+        .feature-text {
+            font-size: 1.1rem;
+            color: #444;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 968px) {
+            .container {
+                flex-direction: column;
+                padding: 2rem;
+            }
+
+            .image-section {
+                text-align: center;
+            }
+
+            .content-section {
+                padding-top: 0;
+            }
+
+            .heading {
+                text-align: center;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: linear-gradient(to right, #f8f9fa, #fdf5e6);
+        }
+
+        .main-heading {
+            text-align: center;
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .card {
+            flex: 1;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .card-title span {
+            color: #666;
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+
+        .card-content {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .icon {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 30px;
+            height: 30px;
+        }
+
+        .rocket-icon {
+            color: #ffd700;
+        }
+
+        .target-icon {
+            color: #ffd700;
+        }
+
+        @media (max-width: 768px) {
+            .cards-container {
+                flex-direction: column;
+            }
+
+            .main-heading {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+        }
+        .containor {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background: linear-gradient(to right, #f8f9fa, #fdf5e6);
+        }
+
+        .main-heading {
+            text-align: center;
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .card {
+            flex: 1;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .card-title span {
+            color: #666;
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+
+        .card-content {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .icon {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 30px;
+            height: 30px;
+        }
+
+        .rocket-icon {
+            color: #ffd700;
+        }
+
+        .target-icon {
+            color: #ffd700;
+        }
+
+        @media (max-width: 768px) {
+            .cards-container {
+                flex-direction: column;
+            }
+
+            .main-heading {
+                font-size: 2.5rem;
+            }
+
+            .containor {
+                padding: 2rem 1rem;
+            }
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            background-color: #ffffff;
+        }
+
+        .pillars-container {
+            display: flex;
+            gap: 2rem;
+            justify-content: space-between;
+        }
+
+        .pillar-card {
+            flex: 1;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .pillar-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .pillar-content {
+            padding: 1.5rem;
+        }
+
+        .pillar-title {
+            font-size: 1.25rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .pillar-text {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        /* First pillar specific styles */
+        .first-pillar .pillar-text {
+            color: #888;
+            font-style: italic;
+        }
+
+        /* Second pillar specific styles */
+        .second-pillar .pillar-text {
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .pillars-container {
+                flex-direction: column;
+            }
+
+            .pillar-card {
+                max-width: 100%;
+            }
+        }
+        .containes {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        .heading {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+
+        .description {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .contact-cards {
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            flex: 1;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background-color: #ffd700;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-circle img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .card-title {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .card-content {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .contact-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-card {
+                max-width: 100%;
+            }
+        }
+        .footer {
+    background: linear-gradient(45deg, #044586, #044586);
+    color: rgb(241, 235, 235);
+    padding: 3rem 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.company-info {
+    max-width: 500px;
+}
+
+.logo {
+    margin-bottom: 2rem;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.company-description {
+    color: #f9fcff;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.contact-section {
+    text-align: right;
+    background-color: #044586;
+}
+
+.contact-heading {
+    color: #00bfff;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-details {
+    color: #f3f4f5;
+    line-height: 1.8;
+}
+
+.contact-details p {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.social-icons {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.social-icons a {
+    color: #00bfff;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .contact-section {
+        text-align: left;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="containe">
+        <div class="hero-image">
+            <img src="home-page-first-block-bg.png" alt="Family investing together">
+        </div>
+        <div class="content">
+            <div class="heading">In 2002, the legacy was further fortified with the inclusion of Sushil Dhawan, a Chartered Accountant with over 20 years of expertise in the financial sector. His leadership and deep insights have driven us to achieve remarkable growth, consistently delivering returns that exceed benchmark indices..</div>
+            <a href="#" class="cta-button">Start Your Journey Now</a>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">25 Lakh</div>
+                    <div class="stat-label">Trusted clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15,400+</div>
+                    <div class="stat-label">Assets Under Management</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+            </div>
+        </div>
+        <div class="decoration decoration-1"></div>
+        <div class="decoration decoration-2"></div>
+    </div>
+    <div class="container">
+        <div class="image-section">
+            <img src="home-second-block-bg.png" alt="Investment advisor pointing">
+        </div>
+        <div class="content-section">
+            <h2 class="heading"><span>Why</span> should you choose us?</h2>
+            <ul class="features-list">
+                <li class="feature-item">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/24/24" alt="Destination icon">
+                    </div>
+                    <div class="feature-text">
+                        One single destination for your entire financial and investment needs
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/24/24" alt="Coach icon">
+                    </div>
+                    <div class="feature-text">
+                        Get your own Personal Investment Coach
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/24/24" alt="Research icon">
+                    </div>
+                    <div class="feature-text">
+                        World class in-house Research Team
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <div class="feature-icon">
+                        <img src="/api/placeholder/24/24" alt="Funds icon">
+                    </div>
+                    <div class="feature-text">
+                        Get access to FundsIndia Select Funds and Specialized Products
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+   
+        <h1 class="main-heading">Innovate, Invest, Inspire</h1>
+        <div class="container">
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-title">
+                    <span>Our</span>
+                    <h2>Mission</h2>
+                </div>
+                <div class="card-content">
+                   <li> Deliver Superior Returns: Consistently achieve investment outcomes that exceed benchmark indices.</li>
+                    <li> Foster Trust and Transparency: Build lasting relationships through honesty and accountability.</li>
+                    <li>Empower Clients: Provide personalized financial strategies tailored to individual and business needs.</li>
+                    <li>Leverage Expertise: Utilize decades of experience and deep market knowledge to drive success.</li>
+                    <li>Promote Financial Security: Help clients achieve long-term stability and wealth preservation.</li>
+                    <li>Embrace Innovation: Integrate advanced tools and techniques for optimal fund management.</li>
+                    <li>Support Growth: Facilitate the expansion of our clients’ financial portfolios with precision.</li>
+                    <li>Create Lasting Impact: Contribute to the financial well-being of individuals, families, and businesses.</li>
+                    
+                </div>
+                <svg class="icon rocket-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.5c-3 0-5.5 2-5.5 5.5 0 2.5 1.5 4.5 3.5 5.5v4.5c0 .5.5 1 1 1h2c.5 0 1-.5 1-1v-4.5c2-.5 3.5-2.5 3.5-5.5 0-3.5-2.5-5.5-5.5-5.5z"/>
+                </svg>
+            </div>
+            <div class="card">
+                <div class="card-title">
+                    <span>Our</span>
+                    <h2>Vision</h2>
+                </div>
+                <div class="card-content">
+                   <li>	Become a Financial Leader: To be recognized as a trusted leader in investment management and financial solutions.</li>
+                    <li> Set Industry Standards: Establish benchmarks for excellence in fund management and client satisfaction.</li>
+                    <li>Foster Financial Growth: Empower individuals and businesses to achieve sustainable financial success.</li>
+                    <li>Champion Innovation: Embrace emerging technologies and strategies to deliver cutting-edge financial solutions.</li>
+                    <li>Promote Financial Literacy: Educate clients and communities about effective financial practices and investment strategies.</li>
+                    <li>Build Enduring Relationships: Cultivate long-term partnerships based on trust, transparency, and mutual growth.</li>
+                    <li>Ensure Sustainable Practices: Focus on ethical and responsible investment approaches for long-term impact.</li>
+                    <li>Inspire Confidence: Create a legacy of reliability and excellence that inspires confidence in every client.</li>
+                   
+                </div>
+                <svg class="icon target-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="10"/>
+                    <circle cx="12" cy="12" r="6"/>
+                    <circle cx="12" cy="12" r="2"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <h1 class="main-heading">Why invest with us</h1>
+    
+    <div class="containor">
+        <div class="pillars-container">
+            <div class="pillar-card first-pillar">
+                <img src="built-on-three-pillars-axis-mutual-fund.png" alt="Three stone" class="pillar-image">
+                <div class="pillar-content">
+                    <h2 class="pillar-title">Our business will be built on three pillars</h2>
+                    <p class="pillar-text">Outside-in View</p>
+                    <p class="pillar-text">Investor at the heart of every single decision.</p>
+                    <p class="pillar-text">Communicate in his language, not in ours.</p>
+                </div>
+            </div>
+
+            <div class="pillar-card second-pillar">
+                <img src="axis-mutual-fund-long-term-relationships.png" alt="Piggy bank representing wealth creation" class="pillar-image">
+                <div class="pillar-content">
+                    <h2 class="pillar-title">Enduring Wealth Creation</h2>
+                    <p class="pillar-text">Play a serious and credible role in investor's money basket.</p>
+                    <p class="pillar-text">Encourage investors to build a long-term perspective of the mutual fund category.</p>
+                </div>
+            </div>
+
+            <div class="pillar-card">
+                <img src="wealth-creation-with-axis-mutual-funds.png" alt="Handshake representing relationships" class="pillar-image">
+                <div class="pillar-content">
+                    <h2 class="pillar-title">Long-term Relationships</h2>
+                    <p class="pillar-text">Leverage the equity of the 'Axis' brand.</p>
+                    <p class="pillar-text">Aim at building relationships rather than being transactional.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="company-info">
+                <div class="logo">
+                 <!---   <svg width="200" height="40" viewBox="0 0 200 40">
+                        <text x="0" y="30" fill="#00bfff" font-size="24" font-weight="bold">CHAUDHRY</text>
+                        <text x="0" y="38" fill="#ffffff" font-size="12">Finance & Investment Co.</text>
+                    </svg>-->
+                </div>
+                <p class="company-description">
+                    Established in 1993, our journey in the financial market began with a strong foundation built under the visionary leadership of Shri Satyapal Dhawan. In 2002, this legacy was further strengthened with the expertise of Sushil Dhawan, a distinguished Chartered Accountant with over 20 years of experience.
+                </p>
+            </div>
+
+            <div class="contact-section">
+                <h2 class="contact-heading">Contact Us</h2>
+                <div class="contact-details">
+                    <p>Call Us : +91-99363 30919</p>
+                    <p>Email Id : mail@Gamil.com</p>
+                    <p>Address : 118/607 A Kaushalpuri, Kanpur- (U.P) 208012</p>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61571228866481 " aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://x.com/FinanceChaudhry
+                      " aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/chaudhry_finance_investment_co/"aria-label="Instagram"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/chaudhry-finance-investment-company/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.threads.net/@chaudhry_finance_investment_co?xmt=AQGz1jjUd4fUzr-3RWLCrzgFynF2MvfRK6GOXCYQtQcqyMY"aria-label="Skype"><i class="fa-brands fa-square-threads"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

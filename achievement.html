@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Achievements</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .achievements-section {
+            padding: 40px;
+            background-color: #0d0e0f;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #f3ebeb;
+        }
+
+        .title-highlight {
+            color: #007bff;
+        }
+
+        .achievements-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .trophy-container {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .trophy-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .achievements-list {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .achievement-item {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .achievement-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: #007bff;
+            border-radius: 50%;
+        }
+
+        .achievement-title {
+            font-size: 1.25rem;
+            color: #faf7f7;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .achievement-subtitle {
+            color: #fdf5f5;
+            font-size: 1rem;
+        }
+        
+.footer {
+    background: linear-gradient(45deg, #000408, #00050a);
+    color: rgb(241, 235, 235);
+    padding: 3rem 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.company-info {
+    max-width: 500px;
+}
+
+.logo {
+    margin-bottom: 2rem;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.company-description {
+    color: #e2e8f0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.contact-section {
+    text-align: right;
+}
+
+.contact-heading {
+    color: #00bfff;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-details {
+    color: #f4f7fa;
+    line-height: 1.8;
+}
+
+.contact-details p {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.social-icons {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.social-icons a {
+    color: #00bfff;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .contact-section {
+        text-align: left;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+    }
+}
+
+
+.trading-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #f8f9fa;
+}
+
+/* Container */
+
+.containers {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    max-width: 80%;
+    justify-content: space-between;
+}
+
+/* Image Styling */
+.image-left img, .image-right img {
+    width: 250px;
+    max-width: 100%;
+}
+
+/* Content Styling */
+.contents {
+    flex: 1;
+    padding: 0 20px;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Call Button */
+.call-button {
+    display: inline-block;
+    background: #00a2e8;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.call-button:hover {
+    background: #007bb5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-left, .image-right {
+        margin-bottom: 20px;
+    }
+
+    .content {
+        padding: 0;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+}
+    </style>
+</head>
+<body>
+   
+    <section class="achievements-section">
+    
+        <h1 class="section-title">Our <span class="title-highlight">Achievements</span></h1>
+        
+        <div class="achievements-container">
+            <div class="trophy-container">
+                <img src="our-achievements.png" class="trophy-image">
+            </div>
+            
+            <div class="achievements-list">
+                <div class="achievement-item">
+                    <h2 class="achievement-title">CNBC-TV</h2>
+                    <p class="achievement-subtitle">18 award for Online Advisory</p>
+                </div>
+                
+                <div class="achievement-item">
+                    <h2 class="achievement-title">Fintech Solution of year award</h2>
+                    <p class="achievement-subtitle">- Frost & Sullivan</p>
+                </div>
+                
+                <div class="achievement-item">
+                    <h2 class="achievement-title">CII Award</h2>
+                    <p class="achievement-subtitle">for Customer Obsession</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="company-info">
+                <div class="logo">
+                    <svg width="200" height="40" viewBox="0 0 200 40">
+                        <text x="0" y="30" fill="#00bfff" font-size="24" font-weight="bold">CHAUDHRY</text>
+                        <text x="0" y="38" fill="#ffffff" font-size="12">Finance & Investment Co.</text>
+                    </svg>
+                </div>
+                <p class="company-description">
+                    Established in 1993, our journey in the financial market began with a strong foundation built under the visionary leadership of Shri Satyapal Dhawan. In 2002, this legacy was further strengthened with the expertise of Sushil Dhawan, a distinguished Chartered Accountant with over 20 years of experience.
+                </p>
+            </div>
+    
+            <div class="contact-section">
+                <h2 class="contact-heading">Contact Us</h2>
+                <div class="contact-details">
+                    <p>Call Us : +91-99363 30919</p>
+                    <p>Email Id : mail@Gamil.com</p>
+                    <p>Address : 118/607 A Kaushalpuri, Kanpur- (U.P) 208012</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i>fb</i></a>
+                    <a href="#" aria-label="Twitter"><i>tw</i></a>
+                    <a href="#" aria-label="Instagram"><i>ig</i></a>
+                    <a href="#" aria-label="LinkedIn"><i>in</i></a>
+                    <a href="#" aria-label="Skype"><i>sk</i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

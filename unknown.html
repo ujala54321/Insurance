@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Appointment Booking</title>
+   <link rel="stylesheet" href="unknow.css">
+</head>
+<body>
+   <div class="constant">
+        <h2>Online Appointment Booking</h2>
+        
+        <form id="bookingForm">
+            <!-- Step 1: Select Service -->
+            <div class="step" id="step1">
+                <h3>Step 1: Select Service</h3>
+                <select id="service">
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="Share Broking">Share Broking</option>
+                    <option value="PMS">Portfolio Management Services (PMS)</option>
+                    <option value="Mutual Funds">Mutual Funds</option>
+                </select>
+                <button type="button" onclick="nextStep(2)">Next</button>
+            </div>
+
+            <!-- Step 2: Choose Date & Time -->
+            <div class="step" id="step2">
+                <h3>Step 2: Choose Date & Time</h3>
+                <input type="date" id="date">
+                <input type="time" id="time">
+                <button type="button" onclick="prevStep(1)">Back</button>
+                <button type="button" onclick="nextStep(3)">Next</button>
+            </div>
+
+            <!-- Step 3: Fill Contact Details -->
+            <div class="step" id="step3">
+                <h3>Step 3: Fill in Contact Details</h3>
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <button type="button" onclick="prevStep(2)">Back</button>
+                <button type="button" onclick="nextStep(4)">Next</button>
+            </div>
+
+            <!-- Step 4: Confirmation -->
+            <div class="step" id="step4">
+                <h3>Step 4: Confirm Appointment</h3>
+                <p id="confirmationText"></p>
+                <button type="button" onclick="prevStep(3)">Back</button>
+                <button type="submit">Confirm Booking</button>
+            </div>
+        </form>
+        
+        <p id="successMessage" class="hidden">✅ Appointment confirmed! Check your email for details.</p>
+   </div>
+</body>
+<script src="unknow.js"></script>
+</html>
